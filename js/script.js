@@ -56,14 +56,14 @@ var string = '';
 function printQuote() {
   var generatedQuote = getRandomQuote();
   string += '<p class="quote">' + generatedQuote +  '</p>';
-  string += '<p class="source">' + quote.prop[1];
-  string += '<span class="citation">' + quote.prop[2] + '</span>';
-  string += '<span class="year">' + quote.prop[3] + '</span>';
+  string += '<p class="source">' + quotes.prop[1];
+  string += '<span class="citation">' + quotes.prop[2] + '</span>';
+  string += '<span class="year">' + quotes.prop[3] + '</span>';
   string += '</p>';
-  if (quote.prop[2] === "") {
+  if (quotes.prop[2] === "") {
     return null;
   } else {
-    return quote.prop[2];
+    return quotes.prop[2];
   }
   document.getElementById('quote-box').innerHTML
 }
