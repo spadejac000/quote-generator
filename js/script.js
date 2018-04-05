@@ -55,7 +55,7 @@ function getRandomQuote() {
 var string = '';
 function printQuote() {
   var generatedQuote = getRandomQuote();
-  string += '<p class="quote">' + quote.prop[0] +  '</p>';
+  string += '<p class="quote">' + generatedQuote +  '</p>';
   string += '<p class="source">' + quote.prop[1];
   string += '<span class="citation">' + quote.prop[2] + '</span>';
   string += '<span class="year">' + quote.prop[3] + '</span>';
