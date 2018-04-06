@@ -3,7 +3,7 @@
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-//This is my array of Quotes
+//This is my array of Quotes. Each object in the array displays the quote, who said it, what type of genre the quote is, and possibly where you can find the qutoe.
 
 var quotes = [
   {
@@ -50,22 +50,23 @@ var quotes = [
   }
 ];
 
-//This function here randomly chooses a quote from the array of quotes and returns it.
+//This function here randomly chooses a quote from the array of quotes and returns it. It uses the random number function to randomize one of the quote key values and then returns it by using the return syntax.
 
 function getRandomQuote() {
-  return quotes[Math.floor(Math.random() * 8)];
+  return quotes[Math.floor(Math.random() * 7)];
 }
 
 
-//This function takes the randomly selected quote from the getRandomQuote function and prints it to the page
+//This function takes the randomly selected quote from the getRandomQuote function and prints it to the page. It does that by first creating to variables: A string var and a generatedQuote var. Then using contactination the string is built up to display all keys in the randomly selected object the right way on the page. Finally the string is printed on the page by using the document.getElementById method and putting the string in the quote-box.
 
-// var string = '';
+
 function printQuote() {
+  var string = '';
   var generatedQuote = getRandomQuote();
 
   string += '<p class="quote">' + generatedQuote.quote +  '</p>';
   string += '<p class="source">' + generatedQuote.source;
-  if (generatedQuote.citation === "") {
+  if (generatedQuote.citation) {
     string += '<span class="citation">' + generatedQuote.citation + '</span>';
   }
   string += '<span class="genre">' + " " + generatedQuote.genre + '</span>';
