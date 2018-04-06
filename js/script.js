@@ -52,20 +52,18 @@ function getRandomQuote() {
 }
 
 
-var string = '';
+// var string = '';
 function printQuote() {
   var generatedQuote = getRandomQuote();
 
   string += '<p class="quote">' + generatedQuote.quote +  '</p>';
   string += '<p class="source">' + generatedQuote.source;
   if (generatedQuote.citation === "") {
-    return null;
-  } else {
     string += '<span class="citation">' + generatedQuote.citation + '</span>';
   }
   string += '<span class="genre">' + " " + generatedQuote.genre + '</span>';
   string += '</p>';
 
-  var div = document.getElementById('quote-box').innerHTML = string;
+  var string = document.getElementById('quote-box').innerHTML = string;
   return string;
 }
