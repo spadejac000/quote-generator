@@ -2,6 +2,9 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
+
+//This is my array of Quotes
+
 var quotes = [
   {
     quote: "I've failed over and over and over again in my life and that is why I succeed.",
@@ -47,10 +50,14 @@ var quotes = [
   }
 ];
 
+//This function here randomly chooses a quote from the array of quotes and returns it.
+
 function getRandomQuote() {
   return quotes[Math.floor(Math.random() * 8)];
 }
 
+
+//This function takes the randomly selected quote from the getRandomQuote function and prints it to the page
 
 // var string = '';
 function printQuote() {
