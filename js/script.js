@@ -55,15 +55,17 @@ function getRandomQuote() {
 var string = '';
 function printQuote() {
   var generatedQuote = getRandomQuote();
-  string += '<p class="quote">' + generatedQuote +  '</p>';
-  string += '<p class="source">' + quotes.prop[1];
-  string += '<span class="citation">' + quotes.prop[2] + '</span>';
-  string += '<span class="year">' + quotes.prop[3] + '</span>';
-  string += '</p>';
-  if (quotes.prop[2] === "") {
+
+  string += '<p class="quote">' + generatedQuote.quote +  '</p>';
+  string += '<p class="source">' + generatedQuote.source;
+  if (generatedQuote.citation === "") {
     return null;
   } else {
-    return quotes.prop[2];
+    string += '<span class="citation">' + generatedQuote.citation + '</span>';
   }
-  document.getElementById('quote-box').innerHTML
+  string += '<span class="genre">' + " " + generatedQuote.genre + '</span>';
+  string += '</p>';
+
+  var div = document.getElementById('quote-box').innerHTML = string;
+  return string;
 }
